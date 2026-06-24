@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 · 爱游戏</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f8f6f2;
+            font-family: 'Segoe UI', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: #2e2b28;
+            padding: 0 1.5rem;
+        }
+
+        .page-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.8rem 1rem 4rem;
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 0 2.2rem;
+            border-bottom: 1px solid #e6ddd2;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 450;
+            letter-spacing: 2px;
+            color: #3b3530;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #7a7065;
+            max-width: 600px;
+            margin: 0 auto;
+            border-left: 3px solid #cbb7a4;
+            padding-left: 1.2rem;
+            text-align: left;
+        }
+
+        /* section spacing */
+        section {
+            margin: 2.8rem 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            color: #3f3731;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px dashed #d6cdc0;
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #4b423b;
+            margin: 1.6rem 0 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #3d3833;
+        }
+
+        .inset-box {
+            background: #f2ede7;
+            border-left: 4px solid #b8a694;
+            padding: 1rem 1.4rem;
+            margin: 1.6rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.96rem;
+            color: #4a4039;
+        }
+
+        .inset-box strong {
+            color: #5f4d3c;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.2rem 1.4rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02), 0 1px 2px rgba(60,40,20,0.06);
+            border: 1px solid #e2d9cf;
+        }
+
+        .feature-card .title-sm {
+            font-weight: 500;
+            color: #4b3f35;
+            margin-bottom: 0.3rem;
+            display: block;
+            font-size: 1.05rem;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            margin-bottom: 0;
+            color: #4e4842;
+        }
+
+        .faq-item {
+            margin: 1.2rem 0;
+            padding: 0.6rem 0.8rem 0.6rem 1rem;
+            border-left: 3px solid #d6c9bb;
+            background: #fbf9f6;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #3f3730;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #5a514a;
+            font-size: 0.93rem;
+        }
+
+        .footnote {
+            text-align: center;
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0d6c9;
+            font-size: 0.88rem;
+            color: #7d7267;
+        }
+
+        .footnote a {
+            color: #6b5c4e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cbb7a4;
+        }
+
+        .footnote a:hover {
+            color: #3f322b;
+        }
+
+        a {
+            color: #5f4d3c;
+        }
+
+        a:hover {
+            color: #302a25;
+        }
+
+        .inline-link {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cfbfaf;
+        }
+
+        .inline-link:hover {
+            text-decoration-color: #7a6857;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .grid-2col { grid-template-columns: 1fr; }
+            .hero .sub { border-left: none; padding-left: 0; }
+            body { padding: 0 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>爱游戏 · 资料索引</h1>
+        <div class="sub">
+            一份围绕游戏信息、类型笔记与平台资料整理的说明页。<br>
+            内容保持清晰、平实，侧重可查阅与归纳。
+        </div>
+    </div>
+
+    <!-- 介绍区：定位与渊源 -->
+    <section>
+        <h2>关于这个索引页</h2>
+        <p>
+            这份页面主要面向对游戏信息有整理需求的玩家或爱好者。站内资料围绕多个游戏类型、机制摘要与平台信息进行归拢，不提供下载或安装引导，只作为一份可翻阅的笔记式索引。
+        </p>
+        <p>
+            其中部分条目取自开放社区存档与个人笔记，并经过二次梳理。如需访问原始信息库，可参考 <a href="https://portal-web-igame.com" class="inline-link">爱游戏</a> 中的分类索引区。
+        </p>
+        <div class="inset-box">
+            <strong>整理说明：</strong> 所有收录条目均以“可查、可溯、可对照”为原则。不包含未经验证的推广性内容，也不对游戏品质做主观评级。
+        </div>
+    </section>
+
+    <!-- 优势区：为什么这样整理 -->
+    <section>
+        <h2>资料整理的几个特点</h2>
+        <div class="grid-2col">
+            <div class="feature-card">
+                <span class="title-sm">按类型分组</span>
+                <p>将游戏按模拟、策略、叙事、解谜等类别分开，方便横向对比机制与风格。</p>
+            </div>
+            <div class="feature-card">
+                <span class="title-sm">标注来源与版本</span>
+                <p>每个条目尽量附注参考来源或更新日期，降低信息混淆的可能。</p>
+            </div>
+            <div class="feature-card">
+                <span class="title-sm">索引优先于评价</span>
+                <p>不刻意制造“推荐排名”，只呈现事实性描述与系统特征。</p>
+            </div>
+            <div class="feature-card">
+                <span class="title-sm">统一术语表达</span>
+                <p>对常用机制词（如 Roguelite、CRPG、Metroidvania）做简要注释，减少阅读门槛。</p>
+            </div>
+        </div>
+        <p style="margin-top:0.8rem; font-size:0.93rem; color:#5f554b;">
+            上述特点在 <a href="https://portal-web-igame.com" class="inline-link">爱游戏</a> 的多个条目页中均有体现，用户可以依据自身兴趣深入查阅。
+        </p>
+    </section>
+
+    <!-- 说明区：具体场景举例 -->
+    <section>
+        <h2>实际说明：从条目到索引</h2>
+        <h3>场景一：想了解某类游戏的系统结构</h3>
+        <p>
+            假设你正在研究“回合制战术”类游戏。页面会列出该类型下若干作品，并附注其资源管理方式、行动顺序逻辑、地图交互维度等，不包含打分或主观结论。你可以直接在索引中跳转到对应作品的长页。
+        </p>
+
+        <h3>场景二：对比同一系列的不同版本</h3>
+        <p>
+            部分系列作品跨越多个平台与年代，页面会以列表形式呈现各版本的发行年份、开发组、主要差异（如界面重制、资料片内容等）。这些信息来自公开文档与归档站，并经交叉核对。
+        </p>
+
+        <div class="inset-box">
+            <strong>一个小提示：</strong> 如果你在查阅过程中发现某个条目存在缺漏或可补充之处，可以通过 <a href="https://portal-web-igame.com" class="inline-link">爱游戏</a> 中标注的反馈通道提交修正。索引本身是开放的，也欢迎共建。
+        </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2>常见疑问摘要</h2>
+
+        <div class="faq-item">
+            <div class="q">Q：这个页面里的游戏条目会定期更新吗？</div>
+            <div class="a">A：会。条目信息随社区更新与版本变迁做渐进修订，目前大致保持每个季度一次小范围补充。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q：为什么没有评分或“必玩”标注？</div>
+            <div class="a">A：索引的定位是工具性资料，不承担导购或评价功能。用户可以根据自己的偏好筛选和判断。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q：我想查阅更详细的机制说明，去哪里找？</div>
+            <div class="a">A：每个作品条目下通常附有内部链接或外部参考指向，方便进一步阅读。<a href="https://portal-web-igame.com" class="inline-link">爱游戏</a> 的条目页也整合了相关主题的延伸索引。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q：页面中的术语注释是否包含个人理解？</div>
+            <div class="a">A：术语注释尽量采用通用解释，并结合实际游戏机制举例。若存在争议性定义，会额外标注不同观点。</div>
+        </div>
+    </section>
+
+    <!-- 底部链接与说明 -->
+    <div class="footnote">
+        <p style="margin-bottom:0.4rem;">
+            这份索引的原始资料源与更多分类可于 <a href="https://portal-web-igame.com">爱游戏</a> 查看。
+        </p>
+        <p style="font-size:0.82rem; color:#9a8f83;">
+            页面仅作信息整理用途 · 内容保持中立 · 最近更新 2025.04
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
