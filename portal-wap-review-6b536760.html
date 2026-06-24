@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 专题资料索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5efe8;
+            font-family: 'Merriweather', 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+            color: #2f2e2b;
+            line-height: 1.7;
+            padding: 0 1.2rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrap {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fcf9f4;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+            padding: 2.4rem 2rem 3.6rem;
+            border-radius: 32px;
+            margin-top: 2.6rem;
+            margin-bottom: 2rem;
+        }
+
+        /* hero 横幅区 —— 用资料整理感的大标题 */
+        .hero {
+            border-bottom: 1px solid #e2d7ca;
+            padding-bottom: 2rem;
+            margin-bottom: 2.4rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "📂 专题档案 · 编号 IG-2025";
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #b3a38e;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: -0.9rem;
+            right: 0.4rem;
+            background: #fcf9f4;
+            padding: 0 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #2f2e2b;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .subhead {
+            font-size: 1rem;
+            color: #8f7f6b;
+            border-left: 4px solid #c7b59e;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            font-style: normal;
+        }
+
+        .label-tag {
+            display: inline-block;
+            background: #e3d7c8;
+            color: #3a352f;
+            padding: 0.15rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            margin-right: 0.4rem;
+            font-weight: 400;
+        }
+
+        /* 三段自然介绍 —— 文章排版 */
+        .section-card {
+            margin: 2.8rem 0 2.8rem 2.4rem;
+            padding-left: 1.2rem;
+            border-left: 2px solid #ddcfbe;
+        }
+
+        .section-card h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            color: #3d362c;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .section-card h2::before {
+            content: "◆";
+            color: #b1987a;
+            font-size: 0.8rem;
+            margin-right: 0.6rem;
+            vertical-align: middle;
+        }
+
+        .section-card p {
+            margin-bottom: 1.1rem;
+            text-align: justify;
+            font-size: 0.98rem;
+            color: #3e3a34;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 引用块 / 提示框 (资料卡) */
+        .callout-box {
+            background: #f1ebe2;
+            border-radius: 16px;
+            padding: 1.8rem 1.8rem 1.8rem 2.2rem;
+            margin: 2.4rem 0 2.8rem;
+            border-left: 6px solid #baa489;
+            box-shadow: inset 0 0 0 1px rgba(255, 250, 240, 0.8);
+        }
+
+        .callout-box .callout-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            color: #514637;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .callout-box p {
+            font-size: 0.95rem;
+            color: #42403b;
+            margin: 0.4rem 0;
+        }
+
+        .callout-box a {
+            color: #6b5c4a;
+            text-decoration: underline 1px dotted #b7a692;
+            text-underline-offset: 3px;
+            font-weight: 450;
+        }
+
+        .callout-box a:hover {
+            color: #342e26;
+            text-decoration: underline 1.5px solid #b1987a;
+        }
+
+        /* FAQ 摘要——轻量问题摘要，非完整Q&A */
+        .faq-mini {
+            margin: 2.8rem 0 1.4rem;
+            padding: 0.2rem 0;
+        }
+
+        .faq-mini details {
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #ddd1c2;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-mini details summary {
+            font-weight: 430;
+            color: #3b352c;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .faq-mini details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-mini details summary::before {
+            content: "❓";
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-right: 0.3rem;
+        }
+
+        .faq-mini details[open] summary::before {
+            content: "📌";
+        }
+
+        .faq-mini details p {
+            padding: 0.6rem 0.6rem 0.2rem 1.6rem;
+            font-size: 0.9rem;
+            color: #514a41;
+            line-height: 1.6;
+        }
+
+        /* 页尾 */
+        .footer-note {
+            margin-top: 4rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e2d7ca;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            color: #6f6457;
+            text-align: center;
+            letter-spacing: 0.2px;
+        }
+
+        .footer-note .foot-link-line {
+            font-size: 0.95rem;
+            margin: 0.2rem 0;
+        }
+
+        .footer-note a {
+            color: #5f5547;
+            text-decoration: underline 1px dotted #b4a38e;
+            text-underline-offset: 3px;
+        }
+
+        .footer-note a:hover {
+            color: #2e2923;
+            text-decoration: underline 1.5px solid #9e8b75;
+        }
+
+        .meta-line {
+            font-size: 0.7rem;
+            color: #a59581;
+            letter-spacing: 0.5px;
+            margin-top: 0.3rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .page-wrap {
+                padding: 1.8rem 1.2rem 2.4rem;
+                margin-top: 1.2rem;
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-card {
+                margin-left: 0.4rem;
+                padding-left: 0.8rem;
+            }
+
+            .callout-box {
+                padding: 1.2rem 1rem;
+            }
+
+            .hero::after {
+                font-size: 0.6rem;
+                bottom: -0.7rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding: 0 0.6rem 2rem;
+            }
+
+            .page-wrap {
+                padding: 1.2rem 0.8rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-card h2 {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+    <!-- hero 首页横幅 带背景说明感 -->
+    <div class="hero">
+        <h1>爱游戏 · 信息索引</h1>
+        <div class="subhead">
+            <span class="label-tag">资料整理</span>
+            <span class="label-tag">专题归档</span>
+            从平台结构到使用场景，一份平实的内容导览
+        </div>
+        <!-- 背景说明：自然融入 -->
+        <p style="margin-top: 1.8rem; font-size: 0.95rem; color: #4c453c; max-width: 90%;">
+            本页基于公开材料及平台常态栏目，梳理 <strong>爱游戏</strong> 所涵盖的资讯模块、服务入口与内容分类，供有需要的读者做索引参考。不构成任何推荐或保证，仅作客观整理。
+        </p>
+    </div>
+
+    <!-- 第一段介绍：从资料整理视角看门户布局 -->
+    <div class="section-card">
+        <h2>门户结构与内容分区</h2>
+        <p>
+            <a href="https://portal-wap-igame.com">爱游戏</a> 在移动端采用轻量级门户设计，首页以分类导航、热门推荐及活动入口为主。从资料归档角度看，其信息层级主要划分为：游戏库（按类型、热度、上线时间排列）、资讯专栏（含版本更新、限时活动说明）、以及用户服务中心（账号、反馈、常见问题）。这种布局让浏览者能根据自身需求快速定位到对应模块，适合作为日常信息获取的起点。
+        </p>
+        <p>
+            值得一提的是，整个门户没有过多复杂弹层，内容展示偏重列表与卡片式排列，对于希望直接查阅游戏相关资料或公告的用户而言，可以较直接地找到目标页面。
+        </p>
+    </div>
+
+    <!-- 第二段介绍：围绕“信息索引”特点展开 -->
+    <div class="section-card">
+        <h2>索引价值与适用场景</h2>
+        <p>
+            作为一个聚合平台，<strong>爱游戏</strong> 的资料价值更多体现在整合性上。例如游戏详情页中通常包含基本介绍、版本记录、相关活动链接，方便从单一入口追溯更多上下文。对于需要跟踪某款游戏动态、或比对不同时期活动规则的整理者来说，这种结构减少了跨页面跳转的搜索成本。
+        </p>
+        <p>
+            同时，平台内设有搜索与筛选功能，支持按关键词、分类、状态（进行中/已结束）检索内容。虽然本页并非官方说明书，但基于日常使用观察，其信息组织方式偏向实用，适合轻度研究或日常查阅。
+        </p>
+    </div>
+
+    <!-- 引用块/提示框 —— 类似资料注解 -->
+    <div class="callout-box">
+        <div class="callout-title">📋 整理备忘</div>
+        <p>
+            以下补充两点索引时常见的情况：① 部分历史活动页面可能因调整而变更URL，建议以首页导航栏或「最新」标签为准；② 游戏详情中的截图与介绍由运营方维护，本索引不保证实时性。如需最准确的信息，可直接访问 <a href="https://portal-wap-igame.com">爱游戏</a> 并浏览对应栏目。
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6b5f52;">—— 资料整理日期：2025年3月 · 基于公开可见内容</p>
+    </div>
+
+    <!-- 第三段介绍：以“场景举例”做自然收束 -->
+    <div class="section-card">
+        <h2>常用索引场景举例</h2>
+        <p>
+            如果你正在整理某款游戏的版本更新记录，可以先在 <a href="https://portal-wap-igame.com">爱游戏</a> 的资讯栏目下按时间排序查找公告；若想回顾已结束的限时活动规则，可在活动归档页中按月份筛选。此外，部分游戏详情页会关联“同类推荐”与“相关攻略”，这些交叉链接也可以作为延伸资料的线索。
+        </p>
+        <p>
+            对于只需要快速了解平台上有哪些内容类别的新用户，首页的图标分类入口（如角色扮演、策略、休闲等）提供了直观的浏览路径。整体而言，<strong>爱游戏</strong> 作为信息索引起点，能节省一些四处搜索的精力。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 —— 非正式问答，仅摘取常见资料型疑问 -->
+    <div class="faq-mini">
+        <details>
+            <summary>平台上的内容多久更新一次？</summary>
+            <p>根据观察，资讯和活动页面通常跟随运营节奏更新，工作日较为频繁。具体时效请以页面标注时间为准。</p>
+        </details>
+        <details>
+            <summary>是否可以检索到已经结束的活动规则？</summary>
+            <p>大多数已结束的活动仍保留介绍页（状态标注为“已结束”），可在活动列表或通过搜索找到，但部分限时页面可能随清理而下线。</p>
+        </details>
+        <details>
+            <summary>资料索引时需要注意什么？</summary>
+            <p>建议优先使用平台搜索功能，并核对页面更新时间。第三方整理内容可能与实际情况存在延迟，请以 <a href="https://portal-wap-igame.com">爱游戏</a> 页面内展示为准。</p>
+        </details>
+    </div>
+
+    <!-- 页尾访问提示 —— 自然文字，不出现“进入/点击/官网”等 -->
+    <div class="footer-note">
+        <div class="foot-link-line">
+            如需浏览完整门户，可前往 <a href="https://portal-wap-igame.com">爱游戏</a> 查阅各栏目内容。
+        </div>
+        <div class="meta-line">
+            本索引页为资料汇编，与平台运营方无直接关联 · 信息仅供参考
+        </div>
+        <div class="meta-line" style="margin-top: 0.2rem;">
+            页面排版：米白背景 · 文章排版 · 引用提示框
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
