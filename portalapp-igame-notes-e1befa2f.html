@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 故事与风格</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fde6d3 0%, #fbe4d0 25%, #f7dac5 50%, #fcddbe 75%, #fbe0c9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+            margin: 0;
+            line-height: 1.7;
+            color: #3b2b20;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 254, 250, 0.88);
+            backdrop-filter: blur(2px);
+            border-radius: 48px 24px 48px 24px;
+            box-shadow: 0 24px 48px -12px rgba(140, 75, 40, 0.25),
+                        0 8px 16px -6px rgba(100, 60, 25, 0.08);
+            padding: 2.8rem 2.6rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 230, 210, 0.6);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0.8rem; }
+            .card { padding: 2rem 1.5rem; border-radius: 32px 16px 32px 16px; }
+        }
+
+        .story-opening {
+            font-size: 1.6rem;
+            font-weight: 340;
+            letter-spacing: 1px;
+            color: #603c26;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e2bc9f;
+            line-height: 1.4;
+        }
+
+        .story-opening span {
+            background: linear-gradient(to right, #9b6b4b, #7a523a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 440;
+        }
+
+        .intro-text p {
+            margin: 1.4rem 0;
+            font-size: 1.05rem;
+            color: #3f2d1f;
+        }
+
+        .intro-text p:first-of-type {
+            margin-top: 0.25rem;
+        }
+
+        .feature-block {
+            background: rgba(244, 230, 220, 0.4);
+            border-radius: 28px 12px 28px 12px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0 1.8rem 0;
+            list-style: none;
+            border-left: 4px solid #c79b7b;
+            box-shadow: inset 0 1px 4px rgba(180, 120, 70, 0.06);
+        }
+
+        .feature-block li {
+            margin: 0.9rem 0;
+            padding-left: 1.4rem;
+            position: relative;
+            font-size: 1rem;
+            color: #3f2e20;
+        }
+
+        .feature-block li::before {
+            content: "·";
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #b58364;
+            position: absolute;
+            left: 0;
+            top: -0.3rem;
+            line-height: 1;
+        }
+
+        .transition-note {
+            font-style: normal;
+            background: rgba(220, 190, 170, 0.15);
+            padding: 0.8rem 1.6rem;
+            border-radius: 100px 12px 100px 12px;
+            margin: 1.2rem 0 1.6rem 0;
+            color: #4e3423;
+            border: 1px solid #dec1ab;
+            font-size: 0.97rem;
+        }
+
+        .closing {
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 1px dashed #d9b8a1;
+            font-size: 1rem;
+            color: #4a3525;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem 0.15rem;
+        }
+
+        .closing a {
+            display: inline-block;
+            background: transparent;
+            color: #6f4a30;
+            font-weight: 460;
+            text-decoration: none;
+            padding: 0.1rem 0.4rem;
+            border-radius: 40px 8px 40px 8px;
+            border: 1px solid #b78d72;
+            transition: all 0.2s ease;
+            background: rgba(255, 245, 235, 0.5);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0.1rem;
+        }
+
+        .closing a:hover {
+            background: #dbbca5;
+            color: #2f1d12;
+            border-color: #946c50;
+            box-shadow: 0 2px 8px rgba(130, 75, 40, 0.15);
+            transform: scale(1.01);
+        }
+
+        .note-soft {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #7d5d47;
+            background: rgba(255, 237, 225, 0.5);
+            padding: 0.7rem 1.2rem;
+            border-radius: 60px 12px 60px 12px;
+            text-align: center;
+            border: 1px solid #dcbca5;
+            letter-spacing: 0.3px;
+        }
+
+        .note-soft a {
+            color: #6b4b34;
+            text-decoration: underline wavy #b3886b 1px;
+            text-underline-offset: 3px;
+            font-weight: 450;
+        }
+
+        .note-soft a:hover {
+            color: #3b2619;
+            text-decoration: underline;
+        }
+
+        .silent-tag {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="story-opening">
+            <span>爱游戏</span> · 一种缓慢的靠近
+        </div>
+
+        <div class="intro-text">
+            <p>大约从十年前开始，游戏就悄悄变了模样。它不再是某个午后打开电视、插上卡带那样简单的事。它变成了一种随时可以进入的状态，一个藏在口袋里的叙事空间。而“爱游戏”——这三个字慢慢沉淀下来，不再是口号，而是一种温和的标签，像黄昏里亮起来的一盏小灯。</p>
+
+            <p>有人喜欢在零碎的间隙打开它，像是翻一本只写了半页的书；有人习惯在固定的夜晚进入，像是赴一个老朋友的约。它不催促，不张扬，也不试图替代你生活中的其他东西。它只是在那里，安静地更新着一些内容——那些你可能需要的、也可能不需要的，但至少是真实的。</p>
+        </div>
+
+        <ul class="feature-block">
+            <li>界面克制，不堆叠弹窗，不制造数字焦虑；</li>
+            <li>节奏由你自己决定，没有每日强迫任务链；</li>
+            <li>内容风格偏安静叙事，适合一个人在光线柔和的地方慢慢看；</li>
+            <li>偶尔有设计上的小惊喜，但从不喧宾夺主。</li>
+        </ul>
+
+        <div class="transition-note">
+            ⚬ 它不属于那种“必须赢”的领域，更像是某类人会在周末傍晚点开的页面 —— 不为什么，只是习惯。
+        </div>
+
+        <p style="margin-top: 0.4rem; font-size: 1rem; color: #4d3727;">如果你也曾有过这样的时刻——不想在嘈杂的广场停留，只想去一个安静的地方，看看现在又有什么平淡而认真的内容——或许可以给自己一个机会，重新感受一下这三个字背后那种平实的质地。这里的氛围，或许比想象中更接近你记忆里某个角落。</p>
+
+        <div class="closing">
+            <span style="margin-right: 0.2rem;">你可以从这里出发，慢慢走向</span>
+            <a href="https://portalapp-igame.com">爱游戏</a>
+            <span style="margin-left: 0.2rem;">—— 没有入口的感觉，只有抵达。</span>
+        </div>
+
+        <div class="note-soft">
+            · 一种安静的邀请 ·<br style="display: none;">
+            <span style="display: inline-block; margin-top: 0.4rem;">它不是世界的中心，但可以是某一小段时光的底色。<br>如果你愿意，<a href="https://portalapp-igame.com" style="text-decoration: underline; background: transparent;">爱游戏</a>就在这里。</span>
+        </div>
+
+        <!-- 仅作为种子占位，不显示 -->
+        <div class="silent-tag" aria-hidden="true"></div>
+    </div>
+</body>
+</html>
